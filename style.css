@@ -1,0 +1,333 @@
+/* Basic CSS Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Placeholder font */
+    line-height: 1.6;
+    color: #333; /* Placeholder text color */
+    background-color: #f4f4f4; /* Placeholder background color */
+}
+
+header, main, footer {
+    width: 100%;
+}
+
+/* Placeholder for global link styling */
+a {
+    text-decoration: none;
+    color: #007bff; /* Placeholder link color */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Placeholder for container styling to center content */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden; /* Clear floats */
+    padding: 0 20px;
+}
+
+/* Header Styling */
+header {
+    background: #fff; /* White background for the header */
+    color: #333;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd; /* Subtle border */
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #007bff; /* Theme color for the title */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+header nav ul li a:hover,
+header nav ul li a.active { /* 'active' class can be added by JS later for current section */
+    color: #0056b3; /* Darker shade on hover */
+    background-color: #e9ecef; /* Light background on hover */
+    border-radius: 5px;
+}
+
+/* Main Content Sections Styling */
+section {
+    padding: 40px 0; /* Add padding to top and bottom of sections */
+}
+
+section h3 { /* Common styling for section titles */
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    background: #007bff; /* Theme color background */
+    color: #fff;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.hero-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background: #ffc107; /* Bright call-to-action color */
+    color: #333;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e0a800; /* Darker shade on hover */
+}
+
+/* Features Section Styling */
+.features-section {
+    background: #fff; /* Alternating background color */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.feature-item {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.feature-item h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+/* Testimonials Section Styling */
+.testimonials-section {
+    background: #f4f4f4; /* Alternating background color */
+}
+
+.testimonial-item {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-style: italic;
+}
+
+.testimonial-item p:last-child { /* For the author attribution */
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Pricing Section Styling */
+.pricing-section {
+    background: #fff;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.pricing-plan {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pricing-plan h4 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.pricing-plan .price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #28a745; /* Green color for price */
+    margin: 15px 0;
+}
+
+.cta-button-plan {
+    background: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px; /* Add some space above the button */
+}
+
+.cta-button-plan:hover {
+    background: #218838;
+}
+
+/* Contact Section Styling */
+.contact-section {
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+/* Footer Styling */
+footer {
+    background: #333; /* Dark background for footer */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px; /* Space above the footer */
+}
+
+footer .container p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header h1 {
+        margin-bottom: 10px; /* Add space below title on mobile */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 5px; /* Space between nav items on mobile */
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        display: block; /* Make links take full width */
+        padding: 10px;
+    }
+
+    .hero-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    section h3 {
+        font-size: 1.8rem;
+    }
+
+    .features-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+    }
+
+    .feature-item,
+    .pricing-plan {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    section h3 {
+        font-size: 1.6rem;
+    }
+
+    .feature-item h4,
+    .pricing-plan h4 {
+        font-size: 1.2rem;
+    }
+
+     .pricing-plan .price {
+        font-size: 1.5rem;
+    }
+}
