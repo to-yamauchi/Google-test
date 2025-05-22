@@ -405,7 +405,18 @@ header nav {
     }
 
     ul#main-nav.active {
-        display: flex; /* Show nav when active */
+        display: flex !important; /* Show nav when active, ensure it overrides other display properties */
+        flex-direction: column; /* This was already there */
+        width: 100%; /* This was already there */
+        background-color: #fff; /* This was already there */
+        position: absolute; /* This was already there */
+        top: 100%; /* This was already there */
+        left: 0; /* This was already there */
+        right: 0; /* This was already there */
+        padding: 10px 0; /* This was already there */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* This was already there */
+        border-top: 1px solid #ddd; /* This was already there */
+        z-index: 1000; /* Explicitly set z-index */
     }
 
     header nav ul#main-nav li {
