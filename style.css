@@ -256,18 +256,23 @@ footer .container p {
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {
     header .container {
-        flex-direction: column;
+        /* flex-direction: column; */ /* Commented out as per new requirements */
+        /* Adjust header container if hamburger is absolute positioned */
+        /* For example, ensure title doesn't overlap if hamburger is on the right */
+         position: relative; /* Needed if hamburger is absolute */
     }
 
     header h1 {
         margin-bottom: 10px; /* Add space below title on mobile */
+        /* Potentially adjust title margin if hamburger takes space or is overlaid */
+        /* margin-right: 50px; /* Example: if hamburger is 50px wide */
     }
 
-    header nav ul {
+    /* header nav ul {
         flex-direction: column;
         align-items: center;
         width: 100%;
-    }
+    } */ /* Commented out as per new requirements */
 
     header nav ul li {
         margin-left: 0;
@@ -330,4 +335,103 @@ footer .container p {
      .pricing-plan .price {
         font-size: 1.5rem;
     }
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+    display: none; /* Hidden by default, shown in mobile view */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Ensure it's above other header content if needed */
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333; /* Line color */
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Styling for when the menu is open (X icon) */
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Default Desktop Navigation (ensure it's still visible) */
+header nav {
+    display: block; /* Or flex, depending on original styling */
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Show hamburger on mobile */
+        position: absolute; /* Or relative, adjust as needed */
+        right: 20px; /* Position it to the right */
+        top: 15px; /* Adjust vertical position */
+    }
+
+    /* header .container is already adjusted above */
+    
+    /* header h1 is already adjusted above */
+
+    header nav {
+        /* This is the container of ul#main-nav */
+        /* It might need to be full width when menu is open */
+    }
+
+    ul#main-nav {
+        display: none; /* Hide nav by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff; /* Background for dropdown */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        right: 0;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-top: 1px solid #ddd;
+    }
+
+    ul#main-nav.active {
+        display: flex; /* Show nav when active */
+    }
+
+    header nav ul#main-nav li {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul#main-nav li a {
+        display: block;
+        padding: 12px 15px; /* Larger tap targets for mobile */
+        border-bottom: 1px solid #eee; /* Separator for links */
+    }
+
+    header nav ul#main-nav li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Adjust original mobile styles for nav from previous steps if they conflict */
+    /* The original @media (max-width: 768px) for header nav ul might need to be overridden or removed */
+    /* Specifically, these existing rules:
+        header nav ul {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+       might need to be removed or adjusted as ul#main-nav now handles this.
+    */
 }
